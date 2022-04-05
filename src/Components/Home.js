@@ -7,12 +7,9 @@ import function5 from "./images/function5.png";
 import function6 from "./images/function6.png";
 import "./Home.css";
 
-
 export default function Home() {
- 
   return (
     <div>
- 
       {/* ======= Hero Section ======= */}
       <section id="hero" className="d-flex align-items-center">
         <div className="container">
@@ -24,7 +21,7 @@ export default function Home() {
               </h2>
               <div data-aos="fade-up" data-aos-delay={800}>
                 <a href="#about" className="btn-get-started scrollto">
-                  Get Started
+                  Get Starteddd
                 </a>
               </div>
             </div>
@@ -1210,7 +1207,7 @@ export default function Home() {
                   </div>
                 </td>
               </tr>
-             
+
               <tr>
                 <td>
                   <span className="sc-80eeb0-1 iuAjRY">
@@ -2259,7 +2256,6 @@ export default function Home() {
                   </div>
                 </td>
               </tr>
-             
             </tbody>
           </table>
         </section>
@@ -3454,7 +3450,6 @@ export default function Home() {
           </div>
         </section>
         {/* End F.A.Q Section */}
-       
       </main>
       {/* End #main */}
     </div>
