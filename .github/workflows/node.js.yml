@@ -29,6 +29,3 @@ jobs:
     - run: yarn build
       env:
         CI: false
-    - run: yarn test
-      env:
-        CI: false
