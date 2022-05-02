@@ -21,13 +21,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - run: npm install yarn
+      - run: yarn
+      - run: yarn build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_INIXTAS }}'
           channelId: live
           projectId: inixtas
-      - run: npm install yarn
-      - run: yarn
-      - run: yarn build
-      - run: yarn run
+     
