@@ -6,11 +6,27 @@ import function4 from "./images/function4.png";
 import function5 from "./images/function5.png";
 import function6 from "./images/function6.png";
 import "./Home.css";
+import Pdf from "react-to-pdf";
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+
+const ref = React.createRef();
 
 export default function Home() {
+  const _exportPdf = () => {
+
+    html2canvas(document.querySelector("#main")).then(canvas => {
+       document.body.appendChild(canvas);  // if you want see your screenshot in body.
+       const imgData = canvas.toDataURL('image/png');
+       const pdf = new jsPDF();
+       pdf.addImage(imgData, 'PNG', 0, 0);
+       pdf.save("download.pdf"); 
+   });
+
+}
   return (
-    <div>
-      <section id="main">
+    <>
+      <section id="main" ref={ref}>
         {/* ======= Clients Section ======= */}
         <section id="clients" className="clients clients">
           <div className="container">
@@ -3421,6 +3437,12 @@ export default function Home() {
         {/* End F.A.Q Section */}
       </section>
       {/* End #main */}
-    </div>
+
+      <Pdf targetRef={ref} filename="post.pdf">
+        {({ toPdf }) => <button onClick={toPdf}>Capture as PDF</button>}
+      </Pdf>
+
+      <button onClick={_exportPdf}>Export to PDF2</button>
+    </>
   );
 }
